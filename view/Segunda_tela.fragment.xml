@@ -1,0 +1,42 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+
+ <Table id="idPartidasTable" headerText="Partidas"
+ items="{ModeloPartidas>/partidas}">
+        <columns>
+            <Column id="id11Column" width="10%" hAlign="Right">
+                <Text id="id18Text" text="" />
+            </Column>
+
+            <Column id="id12Column" width="10%" hAlign="Center">
+                <Text id="idResultadosText" text="Resultados" />
+            </Column>
+
+            <Column id="id13Column" width="10%" hAlign="Left">
+                <Text id="id19Text" text="" />
+            </Column>
+
+        </columns>
+        <items>
+            <ColumnListItem id="id3ColumnListItem" vAlign="Middle">
+                <cells>
+
+                    <Image id="id3Image" src="{ModeloPartidas>time_mandante/escudo}" width="15%" />
+                    <VBox id="idGenVBox">
+                        <Text id="idPlacarText" text="{ModeloPartidas>placar}" />
+                        <Text id="idgolsText" text="{ModeloPartidas>placar_mandante} x {ModeloPartidas>placar_visitante}" />
+                        <Text id="idDataRealizacaoText" text="{ModeloPartidas>data_realizacao} {ModeloPartidas>hora_realizacao}" />
+                        <Text id="idNomePopular2Text" text="{ModeloPartidas>estadio/nome_popular}" />
+                        <Text id="idStatusText" text="{ModeloPartidas>status}" />
+                    </VBox>
+                    <Image id="id4Image" src="{ModeloPartidas>time_visitante/escudo}" width="15%" />
+
+                </cells>
+            </ColumnListItem>
+
+        </items>
+    </Table>
+
+</c:FragmentDefinition>

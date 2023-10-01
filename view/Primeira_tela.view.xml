@@ -1,0 +1,87 @@
+<mvc:View controllerName="brasileirao.controller.Primeira_tela"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="idPage" title="{i18n>title}">
+        <content>
+             <ObjectHeader  
+             title="{ModeloDadosGerais>/edicao_atual/nome}" id="idRodadaObjectHeader"
+             number="{ModeloDadosGerais>/rodada_atual/rodada}a"
+             numberUnit="Rodada"
+             >
+             </ObjectHeader>
+
+<IconTabBar id="idIconTabBar" >
+<items>
+<IconTabFilter id="idClassificaoIconTabFilter" text="Classificação" icon="sap-icon://competitor">
+
+<Table id="idClassificacaoTable"
+items="{ModeloTabela>/Classificacao}">
+
+<columns>
+<Column id="id1Column">
+<Text id="idPosio1Text" text="Posição" ></Text>
+</Column>
+<Column id="id2Column">
+<Text id="idEscudoText" text="Escudo"></Text>
+</Column>
+<Column id="id3Column">
+<Text id="idTimeText" text="Time"></Text>
+</Column>
+<Column id="id4Column"  >
+<Text id="idPontosText" text="Pontos"></Text>
+</Column>
+<Column id="id5Column"  >
+<Text id="idJogosText"  text="Jogos"></Text>
+</Column>
+<Column id="id6Column"  >
+<Text id="idVitoriasText"  text="Vitorias"></Text>
+</Column>
+<Column id="id7Column"  >
+<Text id="idEmpatesText"  text="Empates"></Text>
+</Column>
+<Column id="id30Column"  >
+<Text id="idDerrotasText" text="Derrotas"></Text>
+</Column>
+<Column id="id8Column"  >
+<Text id="idGMText" text="GM"></Text>
+</Column>
+<Column id="id9Column"  >
+<Text id="idGCText"  text="GC"></Text>
+</Column>
+<Column id="id10Column"  >
+<Text id="idSGText"  text="SG"></Text>
+</Column>
+</columns>
+
+<items>
+    <ColumnListItem id="idColumnListItem">
+    <cells>
+    <Text id="idPosicaoText"  text="{ModeloTabela>posicao}"></Text>
+    <Image id="idImage" width="50%" 
+    src="{ModeloTabela>time/escudo}"></Image>
+    <Text id="idNomePopularText"  text="{ModeloTabela>time/nome_popular}"></Text>
+    <Text id="idPontos2Text"  text="{ModeloTabela>pontos}"></Text>
+    <Text id="idJogos2Text"  text="{ModeloTabela>jogos}"></Text>
+    <Text id="idVitorias2Text"  text="{ModeloTabela>vitorias}"></Text>
+    <Text id="idEmpates2Text"  text="{ModeloTabela>empates}"></Text>
+    <Text id="idDerrotas2Text"  text="{ModeloTabela>derrotas}"></Text>
+    <Text id="idGolsProText"  text="{ModeloTabela>gols_pro}"></Text>
+    <Text id="idGolsContraText"  text="{ModeloTabela>gols_contra}"></Text>
+    <Text id="idSaldoGolsText"  text="{ModeloTabela>saldo_gols}"></Text>
+    </cells>
+    </ColumnListItem>
+   </items>
+
+</Table>
+</IconTabFilter>
+
+<IconTabFilter id="idPartidasIconTabFilter" text="Partidas" icon="sap-icon://soccer">
+ <core:Fragment fragmentName="brasileirao.view.Segunda_tela" type="XML" />
+</IconTabFilter>
+
+                 </items>
+          </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>
